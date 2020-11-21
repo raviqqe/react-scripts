@@ -1,0 +1,13 @@
+name: main
+on:
+  - push
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    container:
+      image: node:lts
+    steps:
+      - uses: actions/checkout@main
+      - run: npm install
+      - run: npm run build
+      - run: npm run lint
