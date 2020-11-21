@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "lint": "cspell README.md src/**/* && npx eslint 'src/**/*.ts'"
+    "lint": "cspell README.md src/**/* && npx eslint --ext .ts src"
   },
   "bin": {
     "react-scripts": "dist/react-scripts.js"
