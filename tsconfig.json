@@ -8,7 +8,6 @@
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "lib": ["esnext"],
-    "module": "system",
     "moduleResolution": "node",
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
@@ -16,7 +15,7 @@
     "outDir": "dist",
     "skipLibCheck": true,
     "strict": true,
-    "target": "es2017"
+    "target": "es5"
   },
   "include": ["src"]
 }
