@@ -8,7 +8,7 @@
     "lint": "cspell README.md src/**/* && npx eslint --ext .ts src"
   },
   "bin": {
-    "react-scripts": "dist/react-scripts.js"
+    "react-scripts": "dist/index.js"
   },
   "dependencies": {
     "@babel/core": "^7.12.3",
