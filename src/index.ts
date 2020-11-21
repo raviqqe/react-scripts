@@ -6,7 +6,7 @@ import replace from "@rollup/plugin-replace";
 import { terser } from "rollup-plugin-terser";
 import { generateSW } from "rollup-plugin-workbox";
 import typescript from "@rollup/plugin-typescript";
-import tsconfig from "./tsconfig.json";
+import { compilerOptions } from "./compiler-options";
 
 const subcommand = process.argv[2];
 
@@ -30,7 +30,7 @@ switch (subcommand) {
           "process.env.NODE_ENV": JSON.stringify("production"),
         }),
         terser(),
-        typescript(tsconfig),
+        typescript(compilerOptions),
       ],
     });
     break;
