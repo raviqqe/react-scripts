@@ -4,12 +4,17 @@
   "description": "Fork of react-scripts",
   "license": "MIT",
   "bin": {
-    "react-scripts": "./dist/react-scripts.js"
+    "react-scripts": "dist/react-scripts.js"
   },
-  "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "typescript": "^4.1.2"
+  },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
