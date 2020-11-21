@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Fork of react-scripts",
   "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "lint": "cspell README.md src/**/* && npx eslint 'src/**/*.ts'"
+  },
   "bin": {
     "react-scripts": "dist/react-scripts.js"
   },
@@ -18,6 +22,7 @@
     "@rollup/plugin-typescript": "^6.1.0",
     "@typescript-eslint/eslint-plugin": "^3.10.1",
     "@typescript-eslint/parser": "^3.10.1",
+    "cspell": "^4.2.2",
     "eslint": "^7.13.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-import": "^2.22.1",
