@@ -8,8 +8,8 @@ import { terser } from "rollup-plugin-terser";
 import { generateSW } from "rollup-plugin-workbox";
 import { compilerOptions } from "./compiler-options";
 
-export const build = async (): Promise<void> =>
-  rollup({
+export const build = async (): Promise<void> => {
+  await rollup({
     input: "src/index.ts",
     output: {
       dir: "public",
@@ -30,3 +30,4 @@ export const build = async (): Promise<void> =>
       typescript(compilerOptions),
     ],
   });
+};
