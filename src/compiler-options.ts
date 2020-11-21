@@ -1,6 +1,7 @@
 export const compilerOptions = {
   allowJs: true,
   allowSyntheticDefaultImports: true,
+
   downlevelIteration: true,
   esModuleInterop: true,
   experimentalDecorators: true,

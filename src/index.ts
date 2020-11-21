@@ -1,18 +1,18 @@
-import { rollup } from "rollup";
 import commonjs from "@rollup/plugin-commonjs";
 import json from "@rollup/plugin-json";
 import nodeResolve from "@rollup/plugin-node-resolve";
 import replace from "@rollup/plugin-replace";
+import typescript from "@rollup/plugin-typescript";
+import { rollup } from "rollup";
 import { terser } from "rollup-plugin-terser";
 import { generateSW } from "rollup-plugin-workbox";
-import typescript from "@rollup/plugin-typescript";
 import { compilerOptions } from "./compiler-options";
 
 const subcommand = process.argv[2];
 
 switch (subcommand) {
   case "build":
-    rollup({
+    await rollup({
       input: "src/index.ts",
       output: {
         dir: "public",
@@ -22,8 +22,8 @@ switch (subcommand) {
         commonjs(),
         json(),
         generateSW({
-          swDest: "public/service-worker.js",
           globDirectory: "public",
+          swDest: "public/service-worker.js",
         }),
         nodeResolve(),
         replace({
