@@ -8,7 +8,6 @@
     "lint": "cspell README.md src/**/* && npx eslint --ext .ts src",
     "prepare": "npm run build"
   },
-  "type": "module",
   "bin": {
     "react-scripts": "dist/index.js"
   },
