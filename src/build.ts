@@ -60,6 +60,8 @@ export const watch = (): void => {
   watcher.on("event", (event) => {
     /* eslint-disable no-console */
 
+    console.log();
+
     switch (event.code) {
       case "BUNDLE_END":
         console.log(`Bundle generated in ${event.duration} ms`);
@@ -74,6 +76,8 @@ export const watch = (): void => {
 
         break;
     }
+
+    console.log();
 
     /* eslint-enable no-console */
   });
