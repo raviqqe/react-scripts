@@ -58,17 +58,27 @@ export const watch = (): void => {
   });
 
   watcher.on("event", (event) => {
-    // eslint-disable-next-line no-console
-    console.error(event.code);
+    /* eslint-disable no-console */
 
-    if (event.code === "ERROR") {
-      // eslint-disable-next-line no-console
-      console.error(event.error.message);
+    console.log();
 
-      if (event.error.frame) {
-        // eslint-disable-next-line no-console
-        console.error(event.error.frame);
-      }
+    switch (event.code) {
+      case "BUNDLE_END":
+        console.log(`Bundle generated in ${event.duration} ms`);
+
+        break;
+      case "ERROR":
+        console.log(event.error.message);
+
+        if (event.error.frame) {
+          console.log(event.error.frame);
+        }
+
+        break;
     }
+
+    console.log();
+
+    /* eslint-enable no-console */
   });
 };
