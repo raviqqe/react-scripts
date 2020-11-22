@@ -60,14 +60,19 @@ export const watch = (): void => {
   watcher.on("event", (event) => {
     /* eslint-disable no-console */
 
-    console.log();
-
     switch (event.code) {
+      case "BUNDLE_START":
+        console.log();
+        console.log("Generating bundle...");
+
+        break;
       case "BUNDLE_END":
+        console.log();
         console.log(`Bundle generated in ${event.duration} ms`);
 
         break;
       case "ERROR":
+        console.log();
         console.log(event.error.message);
 
         if (event.error.frame) {
@@ -76,8 +81,6 @@ export const watch = (): void => {
 
         break;
     }
-
-    console.log();
 
     /* eslint-enable no-console */
   });
