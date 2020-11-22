@@ -36,6 +36,7 @@ const getInputOptions = (noEmitOnError: boolean): rollup.InputOptions => ({
 const outputOptions: rollup.OutputOptions = {
   dir: buildDirectory,
   format: "es",
+  sourcemap: true,
 };
 
 const prepareBuildDirectory = () => {
