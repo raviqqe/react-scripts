@@ -3,17 +3,13 @@ import json from "@rollup/plugin-json";
 import nodeResolve from "@rollup/plugin-node-resolve";
 import replace from "@rollup/plugin-replace";
 import typescript from "@rollup/plugin-typescript";
-import { rollup, RollupOptions } from "rollup";
+import { rollup, InputOptions, OutputOptions } from "rollup";
 import { terser } from "rollup-plugin-terser";
 import { generateSW } from "rollup-plugin-workbox";
 import { compilerOptions } from "./compiler-options";
 
-const options: RollupOptions = {
+const inputOptions: InputOptions = {
   input: "src/index.ts",
-  output: {
-    dir: "public",
-    format: "es",
-  },
   plugins: [
     commonjs(),
     json(),
@@ -30,8 +26,13 @@ const options: RollupOptions = {
   ],
 };
 
-export const build = async (): Promise<void> => {
-  const build = await rollup(options);
+const outputOptions: OutputOptions = {
+  dir: "public",
+  format: "es",
+};
 
-  await build.write(options.output);
+export const build = async (): Promise<void> => {
+  const build = await rollup(inputOptions);
+
+  await build.write(outputOptions);
 };
