@@ -1,14 +1,16 @@
-import { join } from "path";
+import { join, resolve } from "path";
 import commonjs from "@rollup/plugin-commonjs";
 import json from "@rollup/plugin-json";
 import nodeResolve from "@rollup/plugin-node-resolve";
 import replace from "@rollup/plugin-replace";
+import webpack from "webpack";
 import typescript from "@rollup/plugin-typescript";
 import * as rollup from "rollup";
 import { terser } from "rollup-plugin-terser";
 import { generateSW } from "rollup-plugin-workbox";
 import { cp, mkdir } from "shelljs";
 import tsConfig from "./tsconfig.json";
+import { promisify } from "util";
 
 const publicDirectory = "public";
 const buildDirectory = "build";
@@ -44,9 +46,30 @@ const prepareBuildDirectory = () => {
 export const build = async (): Promise<void> => {
   prepareBuildDirectory();
 
-  const build = await rollup.rollup(getInputOptions(true));
+  const compiler = webpack({
+    entry: "./src/index.ts",
+    module: {
+      rules: [
+        {
+          test: /\.tsx?$/,
+          use: "ts-loader",
+          exclude: /node_modules/,
+        },
+      ],
+    },
+    resolve: {
+      extensions: [".tsx", ".ts"],
+    },
+    output: {
+      filename: "index.js",
+      path: resolve("build"),
+    },
+  });
 
-  await build.write(outputOptions);
+  const stats = await promisify(compiler.run.bind(compiler))();
+
+  // eslint-disable-next-line no-console
+  console.log(stats?.toString());
 };
 
 export const watch = (): void => {
