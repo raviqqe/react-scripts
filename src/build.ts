@@ -58,22 +58,23 @@ export const watch = (): void => {
   });
 
   watcher.on("event", (event) => {
+    /* eslint-disable no-console */
+
     switch (event.code) {
       case "BUNDLE_END":
-        // eslint-disable-next-line no-console
         console.log(`Bundle generated in ${event.duration} ms`);
 
         break;
       case "ERROR":
-        // eslint-disable-next-line no-console
         console.log(event.error.message);
 
         if (event.error.frame) {
-          // eslint-disable-next-line no-console
           console.log(event.error.frame);
         }
 
         break;
     }
+
+    /* eslint-enable no-console */
   });
 };
