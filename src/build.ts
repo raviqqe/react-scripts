@@ -8,7 +8,6 @@ import * as rollup from "rollup";
 import { terser } from "rollup-plugin-terser";
 import { generateSW } from "rollup-plugin-workbox";
 import { cp, mkdir } from "shelljs";
-
 import tsConfig from "./tsconfig.json";
 
 const publicDirectory = "public";
