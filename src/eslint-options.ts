@@ -1,4 +1,5 @@
 import { Linter } from "eslint";
+import { resolve } from "path";
 
 export const eslintOptions: Linter.Config = {
   env: {
@@ -31,7 +32,7 @@ export const eslintOptions: Linter.Config = {
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: { jsx: true },
-    project: "tsconfig.json",
+    project: resolve(__dirname, "tsconfig.json"),
     sourceType: "module",
   },
   plugins: [
