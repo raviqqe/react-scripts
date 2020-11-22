@@ -10,7 +10,7 @@ export const compilerOptions = {
   lib: ["dom", "dom.iterable", "esnext"],
   module: "esnext",
   moduleResolution: "node",
-  noEmit: true,
+  noEmitOnError: true,
   noUncheckedIndexedAccess: true,
   noUnusedLocals: true,
   noUnusedParameters: true,
