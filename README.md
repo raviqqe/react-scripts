@@ -13,6 +13,8 @@ npm install -D @raviqqe/react-scripts
 ```
 react-scripts init
 react-scripts build
+react-scripts watch
+react-scripts lint
 react-scripts test
 ```
 
