@@ -6,7 +6,7 @@ import typescript from "@rollup/plugin-typescript";
 import { rollup, InputOptions, OutputOptions } from "rollup";
 import { terser } from "rollup-plugin-terser";
 import { generateSW } from "rollup-plugin-workbox";
-import { compilerOptions } from "./compiler-options";
+import { typeScriptOptions } from "./type-script-options";
 
 const inputOptions: InputOptions = {
   input: "src/index.ts",
@@ -22,7 +22,7 @@ const inputOptions: InputOptions = {
       "process.env.NODE_ENV": JSON.stringify("production"),
     }),
     terser(),
-    typescript(compilerOptions),
+    typescript(typeScriptOptions),
   ],
 };
 

@@ -1,4 +1,4 @@
-export const compilerOptions = {
+export const typeScriptOptions = {
   allowJs: true,
   allowSyntheticDefaultImports: true,
   downlevelIteration: true,
