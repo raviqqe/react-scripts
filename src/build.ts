@@ -5,6 +5,7 @@ import nodeResolve from "@rollup/plugin-node-resolve";
 import replace from "@rollup/plugin-replace";
 import typescript from "@rollup/plugin-typescript";
 import * as rollup from "rollup";
+import nodePolyfills from "rollup-plugin-node-polyfills";
 import { terser } from "rollup-plugin-terser";
 import { generateSW } from "rollup-plugin-workbox";
 import { cp, mkdir } from "shelljs";
@@ -22,6 +23,7 @@ const getInputOptions = (noEmitOnError: boolean): rollup.InputOptions => ({
       globDirectory: buildDirectory,
       swDest: join(buildDirectory, "service-worker.js"),
     }),
+    (nodePolyfills() as unknown) as rollup.Plugin,
     nodeResolve(),
     replace({
       "process.env.NODE_ENV": JSON.stringify("production"),
