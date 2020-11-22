@@ -75,6 +75,7 @@ export const eslintOptions: Linter.Config = {
       "always",
       { exceptAfterSingleLine: true },
     ],
+    "no-console": "error",
     "no-duplicate-imports": "error",
     "no-else-return": "error",
     "no-lonely-if": "error",

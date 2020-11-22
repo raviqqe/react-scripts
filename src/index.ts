@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { build } from "./build";
+import { build, watch } from "./build";
 import { init } from "./init";
 import { lint } from "./lint";
 import { runTests } from "./run-tests";
@@ -15,6 +15,9 @@ const [command, ...args] = process.argv.slice(2);
     case "build":
       await build();
       break;
+    case "watch":
+      watch();
+      break;
     case "lint":
       await lint();
       break;
@@ -22,10 +25,12 @@ const [command, ...args] = process.argv.slice(2);
       await runTests(args);
       break;
     default:
+      // eslint-disable-next-line no-console
       console.error("Usage: react-scripts {build,lint,test}");
       process.exit(1);
   }
 })().catch((error) => {
+  // eslint-disable-next-line no-console
   console.error(error);
   process.exit(1);
 });
