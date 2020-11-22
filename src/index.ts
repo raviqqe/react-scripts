@@ -2,7 +2,7 @@
 
 import { build } from "./build";
 import { lint } from "./lint";
-import { runTests } from "./test";
+import { runTests } from "./run-tests";
 
 const [command, ...args] = process.argv.slice(2);
 
