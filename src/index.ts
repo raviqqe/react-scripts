@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { build } from "./build";
+import { build, watch } from "./build";
 import { init } from "./init";
 import { lint } from "./lint";
 import { runTests } from "./run-tests";
@@ -14,6 +14,9 @@ const [command, ...args] = process.argv.slice(2);
       break;
     case "build":
       await build();
+      break;
+    case "watch":
+      watch();
       break;
     case "lint":
       await lint();
