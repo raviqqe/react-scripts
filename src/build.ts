@@ -62,9 +62,11 @@ export const watch = (): void => {
     console.error(event.code);
 
     if (event.code === "ERROR") {
+      // eslint-disable-next-line no-console
       console.error(event.error.message);
 
       if (event.error.frame) {
+        // eslint-disable-next-line no-console
         console.error(event.error.frame);
       }
     }
