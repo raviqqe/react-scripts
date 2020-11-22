@@ -1,5 +1,5 @@
 // eslint-disable-next-line jest/no-jest-import
-import jest from "jest";
+import * as jest from "jest";
 import { jestConfiguration } from "./jest-configuration";
 
 export const runTests = async (args: string[]): Promise<void> =>
