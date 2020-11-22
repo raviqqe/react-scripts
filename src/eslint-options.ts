@@ -1,4 +1,6 @@
-export const eslintOptions = {
+import { Linter } from "eslint";
+
+export const eslintOptions: Linter.Config = {
   env: {
     browser: true,
     es6: true,
@@ -47,7 +49,7 @@ export const eslintOptions = {
     "@typescript-eslint/naming-convention": [
       "error",
       {
-        custom: { regex: "^I[A-Z]", match: true },
+        custom: { match: true, regex: "^I[A-Z]" },
         format: ["PascalCase"],
         selector: "interface",
       },

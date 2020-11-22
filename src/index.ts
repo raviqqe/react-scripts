@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import { build } from "./build";
+import { lint } from "./lint";
 import { runTests } from "./test";
 
 const [command, ...args] = process.argv.slice(2);
@@ -9,6 +10,9 @@ const [command, ...args] = process.argv.slice(2);
   switch (command) {
     case "build":
       await build();
+      break;
+    case "lint":
+      await lint();
       break;
     case "test":
       await runTests(args);
