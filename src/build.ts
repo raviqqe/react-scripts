@@ -62,22 +62,23 @@ export const watch = (): void => {
 
     switch (event.code) {
       case "BUNDLE_START":
-        console.log();
         console.log("Generating bundle...");
+        console.log();
 
         break;
       case "BUNDLE_END":
-        console.log();
         console.log(`Bundle generated in ${event.duration} ms`);
+        console.log();
 
         break;
       case "ERROR":
-        console.log();
         console.log(event.error.message);
 
         if (event.error.frame) {
           console.log(event.error.frame);
         }
+
+        console.log();
 
         break;
     }
