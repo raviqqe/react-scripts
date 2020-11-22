@@ -47,9 +47,9 @@ export const eslintOptions = {
     "@typescript-eslint/naming-convention": [
       "error",
       {
-        selector: "interface",
-        format: ["PascalCase"],
         custom: { regex: "^I[A-Z]", match: true },
+        format: ["PascalCase"],
+        selector: "interface",
       },
     ],
     "@typescript-eslint/no-empty-interface": [
