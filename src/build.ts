@@ -1,14 +1,16 @@
+import { join } from "path";
 import commonjs from "@rollup/plugin-commonjs";
 import json from "@rollup/plugin-json";
 import nodeResolve from "@rollup/plugin-node-resolve";
 import replace from "@rollup/plugin-replace";
 import typescript from "@rollup/plugin-typescript";
-import { join } from "path";
 import { rollup, InputOptions, OutputOptions } from "rollup";
 import { terser } from "rollup-plugin-terser";
 import { generateSW } from "rollup-plugin-workbox";
+import { cp } from "shelljs";
 import tsConfig from "./tsconfig.json";
 
+const publicDirectory = "public";
 const buildDirectory = "build";
 
 const inputOptions: InputOptions = {
@@ -35,6 +37,8 @@ const outputOptions: OutputOptions = {
 };
 
 export const build = async (): Promise<void> => {
+  cp("-r", join(publicDirectory, "*"), buildDirectory);
+
   const build = await rollup(inputOptions);
 
   await build.write(outputOptions);
