@@ -61,7 +61,7 @@ export const watch = (): void => {
     switch (event.code) {
       case "BUNDLE_END":
         // eslint-disable-next-line no-console
-        console.log(`Bundle succeeded in ${event.duration} ms`);
+        console.log(`Bundle generated in ${event.duration} ms`);
 
         break;
       case "ERROR":
