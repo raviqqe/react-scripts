@@ -32,7 +32,7 @@ export const eslintOptions: Linter.Config = {
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: { jsx: true },
-    project: resolve(__dirname, "tsconfig.json"),
+    tsconfigRootDir: __dirname,
     sourceType: "module",
   },
   plugins: [
