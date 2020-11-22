@@ -11,6 +11,7 @@ npm install -D @raviqqe/react-scripts
 ## Usage
 
 ```
+react-scripts init
 react-scripts build
 react-scripts test
 ```

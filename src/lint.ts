@@ -13,12 +13,9 @@ export const lint = async (): Promise<void> => {
   // eslint-disable-next-line no-console
   console.log(formatter.format(results));
 
-  if (
-    results.some(
-      (result) =>
-        result.errorCount + result.fixableWarningCount > 0 || result.output
-    )
-  ) {
+  if (results.some((result) => result.output)) {
+    throw new Error("react-scripts lint fixed errors");
+  } else if (results.some((result) => result.errorCount > 0)) {
     throw new Error("react-scripts lint failed");
   }
 };
