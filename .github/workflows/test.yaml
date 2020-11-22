@@ -10,4 +10,4 @@ jobs:
       - uses: actions/checkout@main
       - run: npm install
       - run: npm run build
-      - run: npm run lint
+      - run: npm start lint

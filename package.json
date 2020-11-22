@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "lint": "node dist/index.js lint",
+    "start": "node dist/index.js",
     "prepare": "npm run build"
   },
   "bin": {
