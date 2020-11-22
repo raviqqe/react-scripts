@@ -50,7 +50,7 @@ export const build = async (): Promise<void> => {
   await build.write(outputOptions);
 };
 
-export const watch = () => {
+export const watch = (): void => {
   prepareBuildDirectory();
 
   const watcher = rollup.watch({
@@ -60,6 +60,10 @@ export const watch = () => {
 
   watcher.on("event", (event) => {
     // eslint-disable-next-line no-console
-    console.log(event.code);
+    console.error(event.code);
+
+    if (event.code === "ERROR") {
+      console.error(event.error);
+    }
   });
 };
