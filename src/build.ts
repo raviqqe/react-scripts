@@ -1,5 +1,4 @@
 import commonjs from "@rollup/plugin-commonjs";
-import eslint from "@rollup/plugin-eslint";
 import json from "@rollup/plugin-json";
 import nodeResolve from "@rollup/plugin-node-resolve";
 import replace from "@rollup/plugin-replace";
@@ -8,13 +7,11 @@ import { rollup, InputOptions, OutputOptions } from "rollup";
 import { terser } from "rollup-plugin-terser";
 import { generateSW } from "rollup-plugin-workbox";
 import { compilerOptions } from "./compiler-options";
-import { eslintOptions } from "./eslint-options";
 
 const inputOptions: InputOptions = {
   input: "src/index.ts",
   plugins: [
     commonjs(),
-    eslint({ ...eslintOptions, throwOnError: true }),
     json(),
     generateSW({
       globDirectory: "public",
