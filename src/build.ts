@@ -7,7 +7,7 @@ import typescript from "@rollup/plugin-typescript";
 import { rollup, InputOptions, OutputOptions } from "rollup";
 import { terser } from "rollup-plugin-terser";
 import { generateSW } from "rollup-plugin-workbox";
-import { cp } from "shelljs";
+import { cp, mkdir } from "shelljs";
 import tsConfig from "./tsconfig.json";
 
 const publicDirectory = "public";
@@ -37,6 +37,7 @@ const outputOptions: OutputOptions = {
 };
 
 export const build = async (): Promise<void> => {
+  mkdir("-p", buildDirectory);
   cp("-r", join(publicDirectory, "*"), buildDirectory);
 
   const build = await rollup(inputOptions);
