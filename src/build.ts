@@ -3,10 +3,13 @@ import json from "@rollup/plugin-json";
 import nodeResolve from "@rollup/plugin-node-resolve";
 import replace from "@rollup/plugin-replace";
 import typescript from "@rollup/plugin-typescript";
+import { join } from "path";
 import { rollup, InputOptions, OutputOptions } from "rollup";
 import { terser } from "rollup-plugin-terser";
 import { generateSW } from "rollup-plugin-workbox";
 import tsConfig from "./tsconfig.json";
+
+const buildDirectory = "build";
 
 const inputOptions: InputOptions = {
   input: "src/index.ts",
@@ -14,8 +17,8 @@ const inputOptions: InputOptions = {
     commonjs(),
     json(),
     generateSW({
-      globDirectory: "public",
-      swDest: "public/service-worker.js",
+      globDirectory: buildDirectory,
+      swDest: join(buildDirectory, "service-worker.js"),
     }),
     nodeResolve(),
     replace({
@@ -27,7 +30,7 @@ const inputOptions: InputOptions = {
 };
 
 const outputOptions: OutputOptions = {
-  dir: "public",
+  dir: buildDirectory,
   format: "es",
 };
 
