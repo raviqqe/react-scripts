@@ -1,5 +1,5 @@
-import { Linter } from "eslint";
 import { resolve } from "path";
+import { Linter } from "eslint";
 
 export const eslintOptions: Linter.Config = {
   env: {
