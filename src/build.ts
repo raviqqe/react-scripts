@@ -62,7 +62,11 @@ export const watch = (): void => {
     console.error(event.code);
 
     if (event.code === "ERROR") {
-      console.error(event.error);
+      console.error(event.error.message);
+
+      if (event.error.frame) {
+        console.error(event.error.frame);
+      }
     }
   });
 };
