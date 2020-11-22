@@ -22,7 +22,7 @@ const getInputOptions = (noEmitOnError: boolean): rollup.InputOptions => ({
       globDirectory: buildDirectory,
       swDest: join(buildDirectory, "service-worker.js"),
     }),
-    nodeResolve({ browser: true, preferBuiltins: false }),
+    nodeResolve(),
     replace({
       "process.env.NODE_ENV": JSON.stringify("production"),
     }),
