@@ -1,4 +1,4 @@
-name: publish
+name: release
 on:
   push:
     branches:
@@ -9,6 +9,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
+      - uses: mikeal/merge-release@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - run: npm install
       - uses: JS-DevTools/npm-publish@v1
         with:
