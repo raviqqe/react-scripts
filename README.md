@@ -5,7 +5,7 @@ Fork of [`react-scripts`](https://github.com/facebook/create-react-app/tree/mast
 ## Features
 
 - TypeScript support
-- Rolling update of new dependencies
+- Rolling update of dependencies
 
 ### Underlying technologies
 
