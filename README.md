@@ -1,5 +1,7 @@
 # @raviqqe/react-scripts
 
+[![npm](https://img.shields.io/npm/v/@raviqqe/react-scripts?style=flat-square)](https://www.npmjs.com/package/@raviqqe/react-scripts)
+
 Fork of [`react-scripts`](https://github.com/facebook/create-react-app/tree/master/packages/react-scripts).
 
 ## Features
