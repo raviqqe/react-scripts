@@ -26,7 +26,7 @@ const [command, ...args] = process.argv.slice(2);
       break;
     default:
       // eslint-disable-next-line no-console
-      console.error("Usage: react-scripts {build,lint,test}");
+      console.error("Usage: react-scripts {init,build,watch,lint,test}");
       process.exit(1);
   }
 })().catch((error: Error) => {
