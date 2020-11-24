@@ -31,6 +31,8 @@ const [command, ...args] = process.argv.slice(2);
   }
 })().catch((error) => {
   // eslint-disable-next-line no-console
-  console.error(error);
+  console.error(error.toString());
+  console.error();
+
   process.exit(1);
 });
