@@ -29,7 +29,7 @@ const [command, ...args] = process.argv.slice(2);
       console.error("Usage: react-scripts {build,lint,test}");
       process.exit(1);
   }
-})().catch((error) => {
+})().catch((error: Error) => {
   // eslint-disable-next-line no-console
   console.error(error.toString());
   console.error();
