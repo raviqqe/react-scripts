@@ -2,6 +2,19 @@
 
 Fork of [`react-scripts`](https://github.com/facebook/create-react-app/tree/master/packages/react-scripts).
 
+## Features
+
+- TypeScript support
+- Rolling update of dependencies
+
+### Underlying technologies
+
+- [TypeScript](https://www.typescriptlang.org/)
+- [React](https://reactjs.org/)
+- [ESLint](https://eslint.org/)
+- [Rollup](https://rollupjs.org/guide/en/)
+- [Jest](https://jestjs.io/)
+
 ## Install
 
 ```
