@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "prepublish": "npm run prepare"
   },
   "bin": {
     "react-scripts": "dist/index.js"
