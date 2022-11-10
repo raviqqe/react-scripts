@@ -7,7 +7,7 @@ jobs:
     container:
       image: node:lts
     steps:
-      - uses: actions/checkout@main
+      - uses: actions/checkout@v3
       - run: npm install
       - run: npm run build
       - run: npm start lint
