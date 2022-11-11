@@ -1,4 +1,3 @@
-// eslint-disable-next-line jest/no-jest-import
 import * as jest from "jest";
 import { jestConfiguration } from "./jest-configuration";
 
